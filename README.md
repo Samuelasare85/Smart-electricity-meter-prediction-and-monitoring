@@ -1,1 +1,1 @@
-# Smart-electricity-meter-predictiona-and-monitoring
+# Smart-electricity-meter-prediction-and-monitoring
