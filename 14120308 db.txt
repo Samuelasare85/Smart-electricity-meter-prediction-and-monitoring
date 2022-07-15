@@ -1,0 +1,1 @@
+lastTopupAmount, balance, lastTopupDate, weekConsumption, highestConsumptionDay, maximumConsumption, lowestConsumptionDay, minimumConsumption, averageConsumption, date
