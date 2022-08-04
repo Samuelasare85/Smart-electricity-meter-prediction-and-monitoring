@@ -1,0 +1,181 @@
+meter: 14125519
+12:24pm 
+dict_values([20.0, 13.14, 20220625, 0, 20220630, 0, 20220630, 0, 0]
+
+{'lastTopupAmount': 20.0,
+ 'balance': 13.14,
+ 'lastTopupDate': 20220625,
+ 'weekConsumption': 0,
+ 'highestConsumptionDay': 20220630,
+ 'maximumConsumption': 0,
+ 'lowestConsumptionDay': 20220630,
+ 'minimumConsumption': 0,
+ 'averageConsumption': 0}
+
+
+meter: 14125509
+12:37pm
+
+dict_values([20.0, 21.06, 20220624, 0, 20220630, 0, 20220630, 0, 0]
+{'lastTopupAmount': 20.0,
+ 'balance': 21.06,
+ 'lastTopupDate': 20220624,
+ 'weekConsumption': 0,
+ 'highestConsumptionDay': 20220630,
+ 'maximumConsumption': 0,
+ 'lowestConsumptionDay': 20220630,
+ 'minimumConsumption': 0,
+ 'averageConsumption': 0}
+
+
+
+meter: 14124356
+12:39pm
+dict_values([30.0, 6.48, 20220625, 0, 20220630, 0, 20220630, 0, 0]
+{'lastTopupAmount': 30.0,
+ 'balance': 6.48,
+ 'lastTopupDate': 20220625,
+ 'weekConsumption': 0,
+ 'highestConsumptionDay': 20220630,
+ 'maximumConsumption': 0,
+ 'lowestConsumptionDay': 20220630,
+ 'minimumConsumption': 0,
+ 'averageConsumption': 0}
+
+
+
+
+ Monday
+ 7:38am
+ meter: 14124356
+ dict_values([30.0, 4.43, 20220625, 0, 20220703, 0, 20220703, 0, 0])
+
+ {'lastTopupAmount': 30.0,
+ 'balance': 4.43,
+ 'lastTopupDate': 20220625,
+ 'weekConsumption': 0,
+ 'highestConsumptionDay': 20220703,
+ 'maximumConsumption': 0,
+ 'lowestConsumptionDay': 20220703,
+ 'minimumConsumption': 0,
+ 'averageConsumption': 0}
+
+
+
+ meter: 14125509
+ 7:42am
+
+dict_values([20.0, 20.38, 20220624, 0, 20220703, 0, 20220703, 0, 0])
+ {'lastTopupAmount': 20.0,
+ 'balance': 20.38,
+ 'lastTopupDate': 20220624,
+ 'weekConsumption': 0,
+ 'highestConsumptionDay': 20220703,
+ 'maximumConsumption': 0,
+ 'lowestConsumptionDay': 20220703,
+ 'minimumConsumption': 0,
+ 'averageConsumption': 0}
+
+
+
+meter: 14125519
+7:46am
+
+dict_values([20.0, 11.77, 20220625, 0, 20220703, 0, 20220703, 0, 0])
+{'lastTopupAmount': 20.0,
+ 'balance': 11.77,
+ 'lastTopupDate': 20220625,
+ 'weekConsumption': 0,
+ 'highestConsumptionDay': 20220703,
+ 'maximumConsumption': 0,
+ 'lowestConsumptionDay': 20220703,
+ 'minimumConsumption': 0,
+ 'averageConsumption': 0}
+
+
+
+Consumption for a particular day = Previous day's balance - that day's
+plot consumption as against time.
+make predictive analysis for consumption with respect to time
+
+
+plotting a balance graph:
+since top ups are for a particular period,
+we can decide to plot balance graph for the whole 
+top up time and also perform predictive analysis on 
+the balance graph. so per your balance history, you'll know what would 
+remain after some time.
+
+so we're essentially looking at:
+1. Predicting the user's consumption over a period of time (You'll 
+consume 3 cedis tomorrow or 10 for the next three days)
+2. Predicting the user's balance over a period of time(How much will be remaining for 
+tomorrow or for this week)
+
+
+import table
+create column for Consumption Since last balance
+compute results for that column
+
+
+29/07/22:
+"meter=14124356"
+
+{'lastTopupAmount': 20.0,
+ 'balance': 10.26,
+ 'lastTopupDate': 20220725,
+ 'weekConsumption': 0,
+ 'highestConsumptionDay': 20220721,
+ 'maximumConsumption': 0,
+ 'lowestConsumptionDay': 20220721,
+ 'minimumConsumption': 0,
+ 'averageConsumption': 0}
+
+dict_values([20.0, 10.26, 20220725, 0, 20220721, 0, 20220721, 0, 0])
+
+
+
+"meter=14120308"
+{'lastTopupAmount': 30.0,
+ 'balance': 16.26,
+ 'lastTopupDate': 20220630,
+ 'weekConsumption': 0,
+ 'highestConsumptionDay': 20220721,
+ 'maximumConsumption': 0,
+ 'lowestConsumptionDay': 20220721,
+ 'minimumConsumption': 0,
+ 'averageConsumption': 0}
+
+dict_values([30.0, 16.26, 20220630, 0, 20220721, 0, 20220721, 0, 0])
+
+
+
+
+"meter=14125509"
+dict_values([20.0, 13.79, 20220624, 0, 20220721, 0, 20220721, 0, 0])
+
+{'lastTopupAmount': 20.0,
+ 'balance': 13.79,
+ 'lastTopupDate': 20220624,
+ 'weekConsumption': 0,
+ 'highestConsumptionDay': 20220721,
+ 'maximumConsumption': 0,
+ 'lowestConsumptionDay': 20220721,
+ 'minimumConsumption': 0,
+ 'averageConsumption': 0}
+
+
+
+"meter=14125519"
+
+{'lastTopupAmount': 50.0,
+ 'balance': 9.43,
+ 'lastTopupDate': 20220728,
+ 'weekConsumption': 0,
+ 'highestConsumptionDay': 20220721,
+ 'maximumConsumption': 0,
+ 'lowestConsumptionDay': 20220721,
+ 'minimumConsumption': 0,
+ 'averageConsumption': 0}
+
+dict_values([50.0, 9.43, 20220728, 0, 20220721, 0, 20220721, 0, 0])
