@@ -1,5 +1,0 @@
-lastTopupAmount, balance, lastTopupDate, weekConsumption, highestConsumptionDay, maximumConsumption, lowestConsumptionDay, minimumConsumption, averageConsumption, date
-30.0, 23.18, 20220630, 0, 20220709, 0, 20220709, 0, 0, 2022-07-17
-30.0, 22.50, 20220630, 0, 20220710, 0, 20220710, 0, 0, 2022-07-18
-30.0, 22.16, 20220630, 0, 20220711, 0, 20220711, 0, 0, 2022-07-19
-30.0, 19.68, 20220630, 0, 20220712, 0, 20220712, 0, 0, 2022-07-20
