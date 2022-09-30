@@ -1,0 +1,160 @@
+{% load static %}
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin 2 - Login</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet">
+    <link href="{% static 'https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="{% static 'css/sb-admin-2.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+<style>
+    #id_username {
+        display: block;
+        width: 100%;
+        height: calc(1.5em + 0.75rem + 2px);
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #6e707e;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #d1d3e2;
+        border-radius: 0.35rem;
+        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    }
+
+    #id_password{
+        display: block;
+        width: 100%;
+        height: calc(1.5em + 0.75rem + 2px);
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #6e707e;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #d1d3e2;
+        border-radius: 0.35rem;
+        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    }
+    .errorlist li{
+        padding: 10px;
+        list-style-type: none;
+        border: 1px solid #FF5722;
+        margin: 10px 0;
+        color: #FF5722
+    }
+    
+    .errorlist{
+        padding: 0;
+    }
+    /*#error_span{
+        padding: 10px;
+        list-style-type: none;
+        margin: 10px 0;
+        color: #FF5722 */
+    }
+</style>
+
+
+</head>
+
+<body class="bg-gradient-primary sidebar-toggled">
+
+    <div class="container">
+
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
+
+            <div class="col-xl-10 col-lg-12 col-md-9">
+
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row">
+                            <div class="col-lg-6 d-none d-lg-block">
+                                <img src="{% static '/images/csg-data-analytics-1024x834.png' %}" alt="ECG logo" height=500px width=470px>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h1 class="h4 text-gray-900 mb-4">Smart Meter Data Analysis</h1>
+                                    </div>
+                                    <form class="user" method="post" name="myform" action="{% url 'smart_app:signin' %}" onsubmit="return validate()">
+                                        {% csrf_token %}
+                                        <ul class="error-list">
+                                            {% for message in messages %}
+                                            <li style="padding: 10px;
+                                            list-style-type: none;
+                                            border: 1px solid #FF5722;
+                                            margin: 10px 0;
+                                            color: #FF5722;">{{ message }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                        {{form.as_p}}
+                                        <span class="analysis_type"> Choose the mode of Consumption pattern: </span>
+                                        <select class="form-control" aria-label=".form-select-sm example" name="analysis">
+                                            <option value="" selected="selected">Choose one</option>
+                                            <option value="week">Week</option>
+                                            <option value="month">Month</option>                      
+                                        </select>                                  
+                                        <br>
+                                        <br>
+                                        <div class="but" >
+                                            <button style="font-size: 1em;" type="submit" class="btn btn-primary btn-user btn-block">Sign in</button>
+                                        </div>
+                                    </form>
+                                    <hr>
+                                    <div class="text-center">
+                                        <a class="small" href="https://enersmart.sperixlabs.org/">Check balance or topup?</a>
+                                        <p class="small">Don't have an account? <a href="{% url 'smart_app:signup' %}">Sign up</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="{% static 'js/sb-admin-2.min.js' %}"></script>    
+    <script>
+        var form_fields = document.getElementsByTagName('input')
+		form_fields[1].placeholder='Username...';
+		form_fields[2].placeholder='Enter password...';
+
+        function validate(){
+            let choice = document.myform.analysis.value;
+            if (choice == "") {
+                document.myform.querySelector("#error_span").innerHTML = "Please choose an option.";
+                document.myform.analysis.focus();
+                return false;
+            }
+    </script>
+    </body>
+</html>
